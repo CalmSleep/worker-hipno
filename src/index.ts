@@ -13,11 +13,12 @@ export default {
 	  
 	  const isGandalfRoute = path === "/gandalf-api/token/index.php"/*  && searchParams.has("param"); */
 
-	  const isGandalftest = path === "/gandalf-api/health-check"
+	 /*  const isGandalftest = path === "/gandalf-api/health-check" */
   
 	  if (isServerRoute) {
 		// Redirige al servidor (165.140.86.130)
-		//va a tener que ser a subdominio porque cloudflare no pueed mandar solictudes a ips directas con proxy activado, sin proxy no funca el worker
+		//va a tener que ser a subdominio el server porque cloudflare no pueed mandar solictudes a ips directas con proxy activado, sin proxy no funca el worker
+		//termino siendo al reves en hipno porque el server con subdominio tiraba error decertificado, tuve que hacer el reves porque vercel le da su certificado
 		const serverUrl = `http://hipno.com.ar${path}${url.search}`;
 		
 		// Clona la request y modifica el "Host" si es necesario
@@ -48,7 +49,7 @@ export default {
 		// Envía la solicitud y devuelve la respuesta
 		return fetch(newRequest);
 	  }
-
+/* 
 	  if (isGandalftest) {
 		// Redirige a https://gandalf-project-middleware.onrender.com/gandalf-api/token
 		const gandalfUrl = `https://gandalf-project-middleware.onrender.com`;
@@ -65,7 +66,7 @@ export default {
   
 		// Envía la solicitud y devuelve la respuesta
 		return fetch(newRequest);
-	  }
+	  } */
   
 	  // Resto del tráfico al frontend (configurado en DNS de Cloudflare)
 	  return fetch(request);
