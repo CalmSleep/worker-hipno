@@ -1,0 +1,11 @@
+name = "my-router"
+compatibility_date = "2024-01-01"
+main = "src/index.ts"
+
+# Asocia el Worker a tu dominio
+routes = [
+  { pattern = "hipno.com.ar/*", zone_name = "hipno.com.ar" }
+]
+
+# Configuración de variables (si las necesitas)
+[vars]
