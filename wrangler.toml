@@ -4,7 +4,7 @@ main = "src/index.ts"
 
 # Asocia el Worker a tu dominio
 routes = [
-  { pattern = "*.hipno.com.ar/*", zone_name = "hipno.com.ar" }
+  { pattern = "hipno.com.ar/*", zone_name = "hipno.com.ar" }
 ]
 
 # Configuración de variables (si las necesitas)

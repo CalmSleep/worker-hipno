@@ -12,7 +12,7 @@
 	},
   "routes": [
     {
-      "pattern": "*.hipno.com.ar/*",
+      "pattern": "hipno.com.ar/*",
       "zone_name": "hipno.com.ar"
     }
   ]
