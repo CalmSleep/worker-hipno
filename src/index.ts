@@ -22,7 +22,10 @@ export default {
 		// Clona la request y modifica el "Host" si es necesario
 		const newRequest = new Request(serverUrl, {
 		  method: request.method,
-		  headers: request.headers,
+		  headers: {
+			...Object.fromEntries(request.headers),
+			"Host": "hipno.com.ar"
+		  },
 		  body: request.body
 		});
   
@@ -34,7 +37,10 @@ export default {
 		// Clona la request y mantiene las cookies
 		const newRequest = new Request(gandalfUrl, {
 		  method: request.method,
-		  headers: request.headers,
+		  headers: {
+			...Object.fromEntries(request.headers),
+			"Host": "hipno.com.ar"
+		  },
 		  body: request.body
 		});
   
@@ -49,7 +55,10 @@ export default {
 		// Clona la request y mantiene las cookies
 		const newRequest = new Request(gandalfUrl, {
 		  method: request.method,
-		  headers: request.headers,
+		  headers: {
+			...Object.fromEntries(request.headers),
+			"Host": "hipno.com.ar"
+		  },
 		  body: request.body
 		});
   
