@@ -9,7 +9,13 @@
 	"compatibility_date": "2025-02-24",
 	"observability": {
 		"enabled": true
-	}
+	},
+  "routes": [
+    {
+      "pattern": "https://hipno.com.ar/*",
+      "zone_name": "hipno.com.ar"
+    }
+  ]
   /**
    * Smart Placement
    * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
