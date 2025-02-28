@@ -17,7 +17,8 @@ export default {
   
 	  if (isServerRoute) {
 		// Redirige al servidor (165.140.86.130)
-		const serverUrl = `http://165.140.86.130${path}${url.search}`;
+		//va a tener que ser a subdominio porque cloudflare no pueed mandar solictudes a ips directas con proxy activado, sin proxy no funca el worker
+		const serverUrl = `http://hipno.com.ar${path}${url.search}`;
 		
 		// Clona la request y modifica el "Host" si es necesario
 		const newRequest = new Request(serverUrl, {
